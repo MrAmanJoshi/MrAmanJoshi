@@ -14,7 +14,7 @@ function Header({user}: User) {
       <nav className="container mx-auto flex items-center justify-between py-4">
         <div className="flex items-center">
       <SiPostmates className="text-pink-500 font-bold text-5xl"/>
-          <Link to="/" className="ml-2 font-semibold text-lg text-pink-700">TrendyPost<span className="text-xs">.com</span></Link>
+          <Link to="/" className="ml-2 font-semibold text-lg text-pink-700">TrendyPost<span className="text-xs text-blue-600">.com</span></Link>
         </div>
         <div className="hidden md:block">
         
