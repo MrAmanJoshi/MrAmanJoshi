@@ -19,8 +19,8 @@ const Profile = ({user}: User) => {
           
        <p className="text-gray-600"><span className="text-gray-800 font-medium">E-mail:</span> {user.email}</p>
           <p className="text-gray-600"><span className="text-gray-800 font-medium"> Phone:</span> {user.phone}</p>
-{/*           <p className="text-gray-600"><span className="text-gray-800 font-medium"> Address:</span> {user.address} </p>
-           */}
+             <p className="text-gray-600"><span className="text-gray-800 font-medium"> Address:</span> {user.address} </p>
+       
         </div>
       </div>
   </div>

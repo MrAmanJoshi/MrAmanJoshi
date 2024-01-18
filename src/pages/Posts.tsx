@@ -3,14 +3,11 @@ import { getPostAndUser, getSearchPost } from "../components/Api";
 import PostCart from "../components/PostCart";
 import { Post } from "../models/Post";
 import { User } from "../models/User";
-import Button from "../components/Button";
 import Loading from "../components/Loading";
 
 const Search = lazy(()=>import("../components/Search"));
 
-type PostProps = {}
-
-const PostList: FC<PostProps> = () => {
+const PostList: FC = () => {
   const [posts, setPosts] = useState<{post: Post, user: User}[]>([]);
  const [query, setQuery] = useState("");
  const [loading, setLoading] = useState(true);
