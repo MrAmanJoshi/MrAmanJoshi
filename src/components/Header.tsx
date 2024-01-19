@@ -54,7 +54,7 @@ const Header: FC<HeaderProps> = ({ user }) => {
           </div>
         </nav>
       </header>
-      {menu === true && <div className=' mt-5 flex flex-col items-center'>
+      {menu && <div className=' mt-5 flex flex-col items-center'>
 
         <div className='border-b'>
           <Link to={'/'} onClick={() => setMenu(false)} className='text-gray-600 text-lg hover:text-blue-900 text-center  p-2'>Home</Link>
@@ -65,16 +65,12 @@ const Header: FC<HeaderProps> = ({ user }) => {
         <div className='border-b'>
           <Link to="/luckyWeel" className='text-gray-600 text-lg hover:text-blue-900 text-center' onClick={() => setMenu(false)}>Try Your Luck</Link>
         </div>
-
-
         <div className='border-b'>
-          <Link onClick={() => setMenu(false)} to={'/Profile'} className='text-gray-600 text-lg hover:text-blue-900 text-center p-2'>Profile</Link>
+          {user && user?.firstName ?
+            <Link to={'/Profile'} className='text-gray-600 text-lg hover:text-blue-900 text-center p-2'>Profile</Link> :
+            <Link to={'/createProfile'} className='text-gray-600 text-lg hover:text-blue-900 text-center p-2'>Create profile</Link>
+          }
         </div>
-        {!user &&
-          <div className='border-b'>
-            <Link onClick={() => setMenu(false)} to={'/createProfile'} className='text-gray-600 text-lg hover:text-blue-900 text-center p-2'>Create profile</Link>
-          </div>}
-
         <Link onClick={() => setMenu(false)} to={'Setting'} className='text-gray-600 text-lg hover:text-blue-900 text-center border-b '>Setting</Link>
 
       </div>}

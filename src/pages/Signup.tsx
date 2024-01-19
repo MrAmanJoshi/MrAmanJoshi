@@ -58,7 +58,15 @@ const initialValues = {
   gender: "",
   password: "",
 };
-
+interface FormProps {
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleBlur: (e: React.FocusEvent<HTMLInputElement>) => void;
+  values: any;
+  errors: any;
+  touched: any;
+  popup: boolean; 
+}
 const SignUp = ({
   handleSubmit,
   handleChange,
@@ -67,7 +75,7 @@ const SignUp = ({
   errors,
   touched,
   popup
-}) => {
+}: FormProps) => {
   return (
     <>
       {popup === true && <Popup message="Your profile has been successfully created." />}
