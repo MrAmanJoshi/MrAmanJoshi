@@ -22,7 +22,7 @@ const handleSubmitForm = async (values: any, bag: any) => {
   });
   localStorage.setItem('userObject', JSON.stringify(response.data));
   bag.props.setPopup(true);
-  
+
 };
 
 const schema = yup.object().shape({
@@ -58,15 +58,7 @@ const initialValues = {
   gender: "",
   password: "",
 };
-interface FormProps {
-  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  handleBlur: (e: React.FocusEvent<HTMLInputElement>) => void;
-  values: any;
-  errors: any;
-  touched: any;
-  popup: boolean; 
-}
+
 const SignUp = ({
   handleSubmit,
   handleChange,
@@ -75,7 +67,7 @@ const SignUp = ({
   errors,
   touched,
   popup
-}: FormProps) => {
+}: any) => {
   return (
     <>
       {popup === true && <Popup message="Your profile has been successfully created." />}
@@ -241,7 +233,6 @@ const SignUp = ({
               />
             </div>
             <div className="flex items-center justify-between">
-
               <Button
                 type="submit"
               > Sign Up
@@ -254,11 +245,10 @@ const SignUp = ({
     </>
   );
 };
-const newSignUp = withFormik({
+
+export default AlertHoc(withFormik({
   mapPropsToValues: () => initialValues,
   validationSchema: schema,
   handleSubmit: handleSubmitForm
-})(SignUp);
-
-export default AlertHoc(newSignUp);
+})(SignUp));
 

@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
 
 type PostCartProps = {
   postData: Post,
-  userData: User
+  userData: User | Partial<User>
 };
 
 const PostCart: FC<PostCartProps> = ({ postData, userData }) => {
 
-  const [like, setLike] = useState(postData.reactions)
-
+  const [like, setLike] = useState(postData.reactions);
+  //need to add only one like option functionality
   const handleLikeAdd = () => setLike(like + 1);
 
   return (

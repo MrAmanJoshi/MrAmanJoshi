@@ -1,11 +1,9 @@
-import { FC } from "react";
 import { User } from "../models/User";
 import withUser from "../components/withUser"
 
-const Profile = ({user}: User) => {
-  
-  return (
-    <>
+const Profile = ({ user }: { user: User }) => (
+
+  <>
     <div className="bg-white shadow-md rounded-lg p-6 max-w-sm mx-auto flex flex-col items-center m-1">
       <div className="flex flex-col items-center">
         <img
@@ -16,19 +14,18 @@ const Profile = ({user}: User) => {
           <h2 className="text-xl font-bold">{user.username}</h2>
           <h5 className="text-lg font-normal text-slate-400">{user.firstName} {user.lastName}</h5>
           <p className="text-gray-600"><span className="text-gray-800 font-medium">Gender:</span> {user.gender}</p>
-          
-       <p className="text-gray-600"><span className="text-gray-800 font-medium">E-mail:</span> {user.email}</p>
+
+          <p className="text-gray-600"><span className="text-gray-800 font-medium">E-mail:</span> {user.email}</p>
           <p className="text-gray-600"><span className="text-gray-800 font-medium"> Phone:</span> {user.phone}</p>
-             <p className="text-gray-600"><span className="text-gray-800 font-medium"> Address:</span> {user.address} </p>
-       
+          <p className="text-gray-600"><span className="text-gray-800 font-medium"> Address:</span> {user.address} </p>
+
         </div>
       </div>
-  </div>
-      {
-        !user && <div className="mt-16 text-center">Create Profile First.</div>
-      }
-      </>
-      )
-};
+    </div>
+    {
+      !user && <div className="mt-16 text-center">Create Profile First.</div>
+    }
+  </>
+)
 
 export default withUser(Profile); 

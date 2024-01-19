@@ -13,7 +13,6 @@ export default function App() {
     <>
       <Header />
       <Routes>
-
         <Route
           path="/Setting"
           element={<Setting />}
@@ -43,8 +42,7 @@ export default function App() {
         <Route
           index
           element={<Post />} />
-
       </Routes>
     </>
   )
-}
+};

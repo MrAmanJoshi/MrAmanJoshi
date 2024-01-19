@@ -1,8 +1,8 @@
-import React, { FC, InputHTMLAttributes, memo } from "react";
+import { FC, InputHTMLAttributes, memo } from "react";
 
 type InputProps = {
-  error?: string; // Make error prop optional
-  touched?: boolean; // Make touched prop optional
+  error?: string;
+  touched?: boolean;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 const Input: FC<InputProps> = ({ className, error, touched, ...rest }) => {
