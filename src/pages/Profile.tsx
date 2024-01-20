@@ -32,13 +32,13 @@ const Profile: React.FC<ProfileProps> = ({ user }) => (
             <span className="text-gray-800 font-medium">Phone:</span> {user.phone}
           </p>
           <p className="text-gray-600">
-            <span className="text-gray-800 font-medium">Address:</span> {user.address}
+            <span className="text-gray-800 font-medium">Address:</span>{user.address.address}
           </p>
         </div>
       </div>
     </div>
     {!user && <div className="mt-16 text-center">Create Profile First.</div>}
-</div>
+  </div>
 );
 
 export default withUser(Profile);
