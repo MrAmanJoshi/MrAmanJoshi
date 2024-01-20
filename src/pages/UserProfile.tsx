@@ -24,7 +24,7 @@ const UserProfile = () => {
         setPost(usersPost);
       })
   }, []);
-
+  console.log("user", user)
   const handleSearch = async () => {
     setLoading(true)
     const data = await axios.get('https://dummyjson.com/posts/search?q=' + query);
@@ -51,7 +51,7 @@ const UserProfile = () => {
             <p className="text-gray-600"><span className="text-gray-800 font-medium">Gender:</span> {user.gender}</p>
             <p className="text-gray-600"><span className="text-gray-800 font-medium">E-mail:</span> {user.email}</p>
             <p className="text-gray-600"><span className="text-gray-800 font-medium"> Phone:</span> {user.phone}</p>
-            <p className="text-gray-600">  <span className="text-gray-800 font-medium"> Address:</span> {user.address!.address}</p>
+            <p className="text-gray-600">  <span className="text-gray-800 font-medium"> Address:</span> {user.address?.address}, city {user.address?.city}</p>
           </div>
         </div>
         <div className="mt-4">
@@ -66,7 +66,11 @@ const UserProfile = () => {
               post.map((post: Post) => (
                 <PostCart
                   postData={post}
-                  userData={user}
+                  userData={{
+                    username: user?.username as string,
+                    firstName: user?.firstName as string,
+                    image: user?.image as string
+                  }}
                   key={post.id}
 
                 />

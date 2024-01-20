@@ -1,12 +1,15 @@
-import React, { FC, useState, memo } from "react";
+import { FC, useState, memo } from "react";
 import { Post } from "../models/Post";
-import { User } from "../models/User";
 import { BsSuitHeartFill } from 'react-icons/bs'
 import { Link } from "react-router-dom";
 
 type PostCartProps = {
   postData: Post,
-  userData: User | Partial<User>
+  userData: {
+    image: string,
+    firstName: string,
+    username: string
+  }
 };
 
 const PostCart: FC<PostCartProps> = ({ postData, userData }) => {

@@ -11,6 +11,6 @@ export type User = {
   password: string;
   birthDate: Date;
   image: string;
-  address: string;
+  address: any;
 }
 
